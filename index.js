@@ -16,8 +16,18 @@ function createFareMultiplier (fare) {
     return (adjustedFare);
 }
 
-const fareDoubler = (fare) => fare * 2;
-const fareTripler = (fare) => fare * 3;
+const fareDoubler = function (fare) {
+    let adjustedFare = (createFareMultiplier(fare));
+    return ((Math.sqrt(adjustedFare())) * 2);
+}
+
+const fareTripler = function (fare) {
+    let adjustedFare = (createFareMultiplier(fare));
+    return ((Math.sqrt(adjustedFare())) * 3);
+}
+
+//const fareDoubler = (fare) => fare * 2;
+//const fareTripler = (fare) => fare * 3;
 
 function selectDifferentDrivers (drivers, fn) {
     const selectedDrivers = fn(drivers);
